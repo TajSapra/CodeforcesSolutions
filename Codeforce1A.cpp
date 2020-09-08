@@ -4,7 +4,7 @@ int main(){
     int m, n, a, ncopy,mcopy;
     cin>>n>>m>>a;
     ncopy=n;
-    int count1=0,count2=0;
+    long long unsigned int count1=0,count2=0;
     while(ncopy>0){
         ncopy-=a;
         count1++;
