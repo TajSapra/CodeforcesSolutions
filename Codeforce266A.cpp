@@ -1,16 +1,22 @@
 #include<iostream>
-#include<string>
+#include <unordered_map> 
 using namespace std;
 int main(){
-    int size;
-    cin>>size;
+    unordered_map<char,int> distinct;
     string input;
     cin>>input;
-    int ans=0;
     for(int i=0;i<input.length();i++){
-        if(input[i]==input[i+1])
-        ans++;
+        distinct[input[i]]++;
     }
-    cout<<ans;
-    return 0;   
+    int count=0;
+    for (auto i :distinct){
+        // cout<<i.first<<" "<<i.second<<endl;
+        if (i.second>0)
+        count++;
+    }
+    if(count%2==0)
+    cout<<"CHAT WITH HER!";
+    else
+    cout<<"IGNORE HIM!";    
+    return 0;
 }
